@@ -1,0 +1,470 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <!-- <meta http-equiv="X-UA-Compatible" content="IE=edge"> -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Babymonster Magazine</title>
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" 
+    rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" 
+    crossorigin="anonymous">
+    <style>
+        body{
+            background: black;
+            color: palevioletred;
+            /* text-align: center; */
+            padding-top: 20px;
+            padding-bottom: 20px;
+            margin-left: 20px;
+            margin-right: 20px;
+        }
+
+        /* smartphone */
+        @media (max-width:500px){
+            body{
+                background-color: rgb(40, 36, 36);
+            }
+            /* #smartphone h1{
+                display: block;
+            } */
+            .nav-custom{
+                display: flex;
+                justify-content: center;
+                background-color: rgb(40, 36, 36);
+                border-color: pink;
+            }
+            .nav-custom .nav-item{
+                color: pink;
+                font-family: cursive;
+                font-size: 16px;
+            }
+            #home{
+                text-align: center;
+                color: pink;
+                font-family: fantasy;
+            }
+            #home h1{
+                font-family: fantasy;
+                font-size: 45px;
+            }
+        }
+
+        /* laptop */
+        @media (min-width:501px) and (max-width:3000px){
+            body{
+                background: black;
+                color: palevioletred;
+                /* text-align: center; */
+                padding-top: 20px;
+                padding-bottom: 20px;
+                margin-left: 20px;
+                margin-right: 20px;
+            }
+            .nav-custom{
+                display: flex;
+                justify-content: flex-end;
+                background-color: black;
+                border-color: pink;
+            }
+            .nav-custom .nav-item{
+                color: pink;
+                font-family: cursive;
+                font-size: 18px;
+            }
+            #home{
+                text-align: center;
+                color: pink;
+                font-family: fantasy;
+            }
+            #home h1{
+                font-family: fantasy;
+                font-size: 45px;
+            }
+            #member h2{
+                text-align: left;
+                color: pink;
+                font-family: fantasy;
+                font-size: 40px;
+            }
+            #member p{
+                text-align: left;
+                color: rgb(234, 139, 155);
+                font-family: cursive;
+                font-size: 18px;
+            }
+            #ahyeon h2{
+                text-align: left;
+                color: pink;
+                font-family: fantasy;
+                font-size: 35px;
+            }
+            #ahyeon h4{
+                text-align: left;
+                color: pink;
+                font-family: cursive;
+            }
+            #ahyeon p{
+                text-align: left;
+                color: rgb(234, 139, 155);
+                font-family: cursive;
+                font-size: 18px;
+            }
+            #chiquita h2{
+                text-align: left;
+                color: pink;
+                font-family: fantasy;
+                font-size: 35px;
+            }
+            #chiquita h4{
+                text-align: left;
+                color: pink;
+                font-family: cursive;
+            }
+            #chiquita p{
+                text-align: left;
+                color: rgb(234, 139, 155);
+                font-family: cursive;
+                font-size: 18px;
+            }
+            #asa h2{
+                text-align: left;
+                color: pink;
+                font-family: fantasy;
+                font-size: 35px;
+            }
+            #asa h4{
+                text-align: left;
+                color: pink;
+                font-family: cursive;
+            }
+            #asa p{
+                text-align: left;
+                color: rgb(234, 139, 155);
+                font-family: cursive;
+                font-size: 18px;
+            }
+            #ruka h2{
+                text-align: left;
+                color: pink;
+                font-family: fantasy;
+                font-size: 35px;
+            }
+            #ruka h4{
+                text-align: left;
+                color: pink;
+                font-family: cursive;
+            }
+            #ruka p{
+                text-align: left;
+                color: rgb(234, 139, 155);
+                font-family: cursive;
+                font-size: 18px;
+            }
+            #aboutus h2{
+                text-align: left;
+                color: pink;
+                font-family: fantasy;
+                font-size: 35px;
+            }
+            #aboutus p{
+                text-align: left;
+                color: rgb(234, 139, 155);
+                font-family: cursive;
+                font-size: 18px;
+            }  
+        }
+
+        /* ipad */
+        /* @media (min-width:501px) and (max-width:768px){
+            body{
+                background-color: purple;
+            }
+            #ipad h1{
+                display: block;
+            }
+        } */
+        
+        /* lanscape */
+        /* @media (max-height:500px){
+            body{
+                background-color: orangered;
+            }
+            #landscape h1{
+                display: block;
+            }
+        } */
+
+
+
+        /* Modify the background color */
+        /* .nav-custom{
+            background-color: black;
+            border-color: pink;
+        }
+        .nav-custom .nav-item{
+            color: pink;
+            font-family: cursive;
+            font-size: 18px;
+        }
+        #home{
+            text-align: center;
+            color: pink;
+            font-family: fantasy;
+        }
+        #home h1{
+            font-family: fantasy;
+            font-size: 45px;
+        }
+        #member h2{
+            text-align: left;
+            color: pink;
+            font-family: fantasy;
+            font-size: 40px;
+        }
+        #member p{
+            text-align: left;
+            color: rgb(234, 139, 155);
+            font-family: cursive;
+            font-size: 18px;
+        }
+        #ahyeon h2{
+            text-align: left;
+            color: pink;
+            font-family: fantasy;
+            font-size: 35px;
+        }
+        #ahyeon h4{
+            text-align: left;
+            color: pink;
+            font-family: cursive;
+        }
+        #ahyeon p{
+            text-align: left;
+            color: rgb(234, 139, 155);
+            font-family: cursive;
+            font-size: 18px;
+        }
+        #chiquita h2{
+            text-align: left;
+            color: pink;
+            font-family: fantasy;
+            font-size: 35px;
+        }
+        #chiquita h4{
+            text-align: left;
+            color: pink;
+            font-family: cursive;
+        }
+        #chiquita p{
+            text-align: left;
+            color: rgb(234, 139, 155);
+            font-family: cursive;
+            font-size: 18px;
+        }
+        #asa h2{
+            text-align: left;
+            color: pink;
+            font-family: fantasy;
+            font-size: 35px;
+        }
+        #asa h4{
+            text-align: left;
+            color: pink;
+            font-family: cursive;
+        }
+        #asa p{
+            text-align: left;
+            color: rgb(234, 139, 155);
+            font-family: cursive;
+            font-size: 18px;
+        }
+        #ruka h2{
+            text-align: left;
+            color: pink;
+            font-family: fantasy;
+            font-size: 35px;
+        }
+        #ruka h4{
+            text-align: left;
+            color: pink;
+            font-family: cursive;
+        }
+        #ruka p{
+            text-align: left;
+            color: rgb(234, 139, 155);
+            font-family: cursive;
+            font-size: 18px;
+        }
+        #aboutus h2{
+            text-align: left;
+            color: pink;
+            font-family: fantasy;
+            font-size: 35px;
+        }
+        #aboutus p{
+            text-align: left;
+            color: rgb(234, 139, 155);
+            font-family: cursive;
+            font-size: 18px;
+        } */
+    </style>
+</head>
+<body>
+    <!-- <div id="smartphone"><h1>Smart Phone</h1></div>
+    <div id="ipad"><h1>Ipad</h1></div>
+    <div id="laptop"><h1>Laptop</h1></div>
+    <div id="tv"><h1>TV</h1></div>
+    <div id="landscape"><h1>Lanscape</h1></div> -->
+    <div class="test">
+        <nav class="nav nav-custom">
+            <a href="#home" class="nav-item nav-link">Home</a>
+            <a href="#member" class="nav-item nav-link">Member</a>
+            <a href="#ahyeon" class="nav-item nav-link">Ahyeon</a>
+            <a href="#chiquita" class="nav-item nav-link">Chiquita</a>
+            <a href="#asa" class="nav-item nav-link">Asa</a>
+            <a href="#ruka" class="nav-item nav-link">Ruka</a>
+            <a href="#aboutus" class="nav-item nav-link">About Us</a>
+        </nav>
+    </div>
+    <div id="home">
+        <br>
+        <br>
+        <h1>BABYMONSTER</h1>
+        <br>
+        <!-- <img src="https://i.pinimg.com/564x/f8/e4/ed/f8e4ed1a5910b1caa841696b1d177ba8.jpg" alt="yg_logo" width="300px"> -->
+        <img src="https://i.pinimg.com/564x/f0/77/be/f077be73f7b21f2d727403ddb8bef02e.jpg" alt="picture_Babymonster" width="700px">
+        <!-- <img src="https://i.pinimg.com/564x/f8/e4/ed/f8e4ed1a5910b1caa841696b1d177ba8.jpg" alt="yg_logo" width="300px"> -->
+    </div>
+    <div id="member">
+        <br>
+        <br>
+        <h2>MEMBER</h2>
+        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Illo omnis 
+            eveniet non eos iure, provident molestiae maxime ratione reiciendis, 
+            architecto illum. Officiis, quam porro. Ducimus eligendi officiis, libero 
+            quia saepe impedit fugiat, doloribus quae autem nobis, deserunt voluptas 
+            recusandae cupiditate dolorum quas nam accusamus sit iste tempora voluptatum. 
+            Sint laudantium iste nam tempora tempore molestiae. Repellendus quod vel 
+            aspernatur autem id aliquid provident ut amet harum dolores ipsum voluptatem, 
+            adipisci maxime numquam hic atque nemo quisquam quibusdam eligendi deserunt 
+            eveniet voluptatum quis facere similique? Dolore, consectetur vel velit pariatur 
+            totam sunt quo nulla, tempore reprehenderit quod inventore molestias fuga omnis 
+            nihil, neque esse modi nostrum ex quidem blanditiis rem debitis delectus iusto. 
+            Temporibus saepe fugit voluptas et corporis eveniet magni quas, pariatur, nostrum 
+            inventore minima unde nobis dolor voluptate ipsa incidunt amet ut voluptatem quaerat 
+            aliquam velit deserunt. Expedita ad dolore harum repudiandae sequi excepturi quam molestiae 
+            adipisci? Architecto asperiores ut nihil laborum exercitationem facilis dolorem dolore, amet 
+            minima hic nulla! Quasi aut, at aliquam non distinctio quaerat dolorum ipsum sit dolore illo 
+            qui provident nesciunt tempora numquam, rem quo unde adipisci ut, eum maiores. Quaerat nesciunt 
+            aspernatur reprehenderit temporibus nihil deserunt molestiae rem ipsum, voluptate quis eveniet ad vel!</p>
+    </div>
+    <div id="ahyeon">
+        <br>
+        <br>
+        <h2>AHYEON</h2>
+        <br>
+        <img src="https://i.pinimg.com/236x/42/8b/54/428b544b6e0ebad28ab858ad0f781525.jpg" alt="picture_Ahyeon" 
+        width="500px" height="500px">
+        <h4><br>HER INFO<br></h4>
+        <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Numquam, quo natus. Eligendi 
+        nostrum, vel totam quo voluptas quos cumque architecto, eveniet eius aperiam officiis, provident 
+        pariatur non veniam quae eaque maiores minima. Reiciendis, quis laboriosam. Nostrum cumque dignissimos 
+        excepturi explicabo facilis. Ratione dolorum neque sapiente quibusdam perferendis illum quas deserunt 
+        atque sint iusto consequuntur, beatae culpa sunt fugit dolores voluptatem, laboriosam repellendus veniam 
+        dicta minus vel reiciendis consectetur architecto. Sequi a doloribus impedit ipsa quae eligendi expedita 
+        voluptatum officiis! Tenetur consequuntur, magni fugit blanditiis quasi hic quisquam, ad, accusantium 
+        impedit quae id voluptas! Distinctio maiores ipsa fugiat repudiandae vitae cumque, illo quasi tempore 
+        qui maxime eaque voluptatum consequuntur nihil, perferendis magnam quas suscipit neque accusamus autem 
+        dolorem mollitia ut alias nesciunt quidem? Recusandae vitae labore eveniet eum ab et eaque deserunt ex 
+        illo accusantium repellat, quis repudiandae! Alias facere est dolores sapiente consequatur, vel maiores 
+        minima non exercitationem ab ratione inventore, voluptate porro assumenda illo. Hic, minus magnam aliquid 
+        obcaecati deleniti, laudantium natus repudiandae corrupti aliquam quod dolor dolores a, est suscipit 
+        perspiciatis ducimus mollitia necessitatibus eligendi debitis veritatis?</p>
+    </div>
+    <div id="chiquita">
+        <br>
+        <br>
+        <h2>CHIQUITA</h2>
+        <br>
+        <img src="https://i.pinimg.com/564x/0c/2e/f4/0c2ef48bb9b96200dea49608bef7155a.jpg" alt="picture_Chiquita" 
+        width="500px" height="500px">
+        <h4><br>HER INFO<br></h4>
+        <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Numquam, quo natus. Eligendi 
+        nostrum, vel totam quo voluptas quos cumque architecto, eveniet eius aperiam officiis, provident 
+        pariatur non veniam quae eaque maiores minima. Reiciendis, quis laboriosam. Nostrum cumque dignissimos 
+        excepturi explicabo facilis. Ratione dolorum neque sapiente quibusdam perferendis illum quas deserunt 
+        atque sint iusto consequuntur, beatae culpa sunt fugit dolores voluptatem, laboriosam repellendus veniam 
+        dicta minus vel reiciendis consectetur architecto. Sequi a doloribus impedit ipsa quae eligendi expedita 
+        voluptatum officiis! Tenetur consequuntur, magni fugit blanditiis quasi hic quisquam, ad, accusantium 
+        impedit quae id voluptas! Distinctio maiores ipsa fugiat repudiandae vitae cumque, illo quasi tempore 
+        qui maxime eaque voluptatum consequuntur nihil, perferendis magnam quas suscipit neque accusamus autem 
+        dolorem mollitia ut alias nesciunt quidem? Recusandae vitae labore eveniet eum ab et eaque deserunt ex 
+        illo accusantium repellat, quis repudiandae! Alias facere est dolores sapiente consequatur, vel maiores 
+        minima non exercitationem ab ratione inventore, voluptate porro assumenda illo. Hic, minus magnam aliquid 
+        obcaecati deleniti, laudantium natus repudiandae corrupti aliquam quod dolor dolores a, est suscipit 
+        perspiciatis ducimus mollitia necessitatibus eligendi debitis veritatis?</p>
+    </div>
+    <div id="asa">
+        <br>
+        <br>
+        <h2>ASA</h2>
+        <br>
+        <img src="https://i.pinimg.com/564x/77/c9/4f/77c94fd69690cb292d6b52be34cbfc93.jpg" alt="picture_Asa" 
+        width="500px" height="500px">
+        <h4><br>HER INFO<br></h4>
+        <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Numquam, quo natus. Eligendi 
+        nostrum, vel totam quo voluptas quos cumque architecto, eveniet eius aperiam officiis, provident 
+        pariatur non veniam quae eaque maiores minima. Reiciendis, quis laboriosam. Nostrum cumque dignissimos 
+        excepturi explicabo facilis. Ratione dolorum neque sapiente quibusdam perferendis illum quas deserunt 
+        atque sint iusto consequuntur, beatae culpa sunt fugit dolores voluptatem, laboriosam repellendus veniam 
+        dicta minus vel reiciendis consectetur architecto. Sequi a doloribus impedit ipsa quae eligendi expedita 
+        voluptatum officiis! Tenetur consequuntur, magni fugit blanditiis quasi hic quisquam, ad, accusantium 
+        impedit quae id voluptas! Distinctio maiores ipsa fugiat repudiandae vitae cumque, illo quasi tempore 
+        qui maxime eaque voluptatum consequuntur nihil, perferendis magnam quas suscipit neque accusamus autem 
+        dolorem mollitia ut alias nesciunt quidem? Recusandae vitae labore eveniet eum ab et eaque deserunt ex 
+        illo accusantium repellat, quis repudiandae! Alias facere est dolores sapiente consequatur, vel maiores 
+        minima non exercitationem ab ratione inventore, voluptate porro assumenda illo. Hic, minus magnam aliquid 
+        obcaecati deleniti, laudantium natus repudiandae corrupti aliquam quod dolor dolores a, est suscipit 
+        perspiciatis ducimus mollitia necessitatibus eligendi debitis veritatis?</p>
+    <div id="ruka">
+        <br>
+        <br>
+        <h2>RUKA</h2>
+        <br>
+        <img src="https://i.pinimg.com/564x/6c/76/1e/6c761ed2de21876659d472603dd9f98a.jpg" alt="picture_Ruka" 
+        width="500px" height="500px">
+        <h4><br>HER INFO<br></h4>
+        <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Numquam, quo natus. Eligendi 
+        nostrum, vel totam quo voluptas quos cumque architecto, eveniet eius aperiam officiis, provident 
+        pariatur non veniam quae eaque maiores minima. Reiciendis, quis laboriosam. Nostrum cumque dignissimos 
+        excepturi explicabo facilis. Ratione dolorum neque sapiente quibusdam perferendis illum quas deserunt 
+        atque sint iusto consequuntur, beatae culpa sunt fugit dolores voluptatem, laboriosam repellendus veniam 
+        dicta minus vel reiciendis consectetur architecto. Sequi a doloribus impedit ipsa quae eligendi expedita 
+        voluptatum officiis! Tenetur consequuntur, magni fugit blanditiis quasi hic quisquam, ad, accusantium 
+        impedit quae id voluptas! Distinctio maiores ipsa fugiat repudiandae vitae cumque, illo quasi tempore 
+        qui maxime eaque voluptatum consequuntur nihil, perferendis magnam quas suscipit neque accusamus autem 
+        dolorem mollitia ut alias nesciunt quidem? Recusandae vitae labore eveniet eum ab et eaque deserunt ex 
+        illo accusantium repellat, quis repudiandae! Alias facere est dolores sapiente consequatur, vel maiores 
+        minima non exercitationem ab ratione inventore, voluptate porro assumenda illo. Hic, minus magnam aliquid 
+        obcaecati deleniti, laudantium natus repudiandae corrupti aliquam quod dolor dolores a, est suscipit 
+        perspiciatis ducimus mollitia necessitatibus eligendi debitis veritatis?</p>
+    </div>
+    </div>
+    <div id="aboutus">
+        <br>
+        <br>
+        <h2>About Us</h2>
+        <br>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Soluta eligendi eius ducimus minima fuga nam 
+            labore. Rem sint odio neque, quos et obcaecati molestiae dolore itaque suscipit, veniam autem consequatur 
+            provident nostrum, assumenda illum veritatis aliquam sequi temporibus quia sapiente nisi ipsa ratione! 
+            Molestiae fugiat neque id provident iure totam, eligendi expedita reiciendis atque molestias nisi quidem, 
+            nostrum aspernatur officiis, at autem iusto culpa sapiente voluptas? Nisi consectetur a pariatur temporibus 
+            vitae amet obcaecati libero dolorem reprehenderit minus veritatis hic fuga harum, sunt voluptates odio, 
+            ipsam, qui optio nesciunt! Ullam officiis consequuntur optio aliquam error harum, reprehenderit at. Possimus, 
+            facilis.</p>
+    </div>
+</body>
+</html>
+

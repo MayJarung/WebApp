@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html>
+    <head></head>
+    <body>
+        <div id="maincontainer"></div>
+        <script>
+            let main = document.getElementById("maincontainer")
+
+            let head = document.createElement("h2")
+            head.textContent = "Exercise 04: Javascript&DOM"
+            main.appendChild(head)
+
+            let color = ['LightSalmon','Thistle','DarkSeaGreen','PowderBlue','PaleGreen','LightSteelBlue','Tan']
+            let cur_color = 0
+            let switch_color = () => {
+                time_date.style.backgroundColor = color[cur_color]
+                cur_color += 1
+                cur_color %= color.length
+            }
+
+            let dateButton = document.createElement("button")
+            dateButton.innerHTML = "Click me to display Date and Time"
+            dateButton.style.marginBottom = "9px";
+            main.appendChild(dateButton)
+
+            let time_date = document.createElement("div")
+            time_date.hidden = true
+            time_date.innerHTML = new Date().toString()
+            time_date.style.width = "fit-content";
+            time_date.style.position = "fixed";
+            time_date.style.top = "0";
+            time_date.style.right = "0";
+            time_date.style.border = "3px solid black";
+            main.appendChild(time_date)
+
+            let WebWorker = null
+
+            let create_WebWorker = () => {
+                let worker = new Worker("WebWorker.js")
+                dateButton.style.visibility = "hidden"
+                switch_color()
+                time_date.innerHTML = new Date().toString()
+                time_date.hidden = false
+                worker.onmessage = (evn) => {
+                    time_date.innerHTML = evn.data
+                    switch_color()
+                }
+                return worker;
+            }
+
+            let delete_WebWorker = () => {
+                WebWorker.terminate()
+            }
+
+            dateButton.onclick = () => {
+                WebWorker = create_WebWorker()
+            }
+
+            time_date.onclick = () => {
+                if (time_date.style.position == "fixed") {
+                    delete_WebWorker()
+                    time_date.style.position = "relative"
+                    dateButton.style.display = "none"
+                }
+                else{
+                    WebWorker = create_WebWorker()
+                    time_date.style.position = "fixed"
+                    dateButton.style.display = "block"
+                    dateButton.style.paddingBottom = "4px"
+                }
+            }
+
+            let br1 = document.createElement("br")
+            let br2 = document.createElement("br")
+            main.appendChild(br1)
+            main.appendChild(br2)
+
+            let personal_button = document.createElement("a")
+            personal_button.innerHTML = "Personal info"
+            personal_button.href = "#"
+            personal_button.style.color = "LightCoral"
+            personal_button.addEventListener('mouseout',firstfunction)
+            personal_button.addEventListener('mouseover',secondfunction)
+
+            function firstfunction(){
+                personal_button.style.backgroundColor = "white"
+                personal_button.style.color = "LightCoral"
+            }
+            function secondfunction(){
+                personal_button.style.backgroundColor = "yellow"
+                personal_button.style.color = "blue"
+            }
+
+            let personal_data = document.createElement("ul")
+            personal_data.setAttribute("type","disc")
+            personal_data.hidden = true
+            personal_button.onclick = function(){
+                personal_data.hidden = !personal_data.hidden
+            }
+            let data1 = document.createElement("li")
+            let data2 = document.createElement("li")
+            let data3 = document.createElement("li")
+            data1.innerHTML = "Tanchanok Charungpattananon, ID: 64010359"
+            data2.innerHTML = "Subject: WEB APPLICATION DEVELOPMENT"
+            data3.innerHTML = "Semester: 2/2565"
+            personal_data.appendChild(data1)
+            personal_data.appendChild(data2)
+            personal_data.appendChild(data3)
+            main.appendChild(personal_button)
+            main.appendChild(personal_data)
+            
+            let snapshot = document.createElement('h1')
+            snapshot.innerHTML = "Snapshots"
+            
+            let snaplist = document.createElement("ul")
+            snaplist.setAttribute("type","disc")
+            
+            let snaplist1 = document.createElement("li")
+            let pic1 = document.createElement("a")
+            pic1.innerHTML = "Cute-Baby-Dog-Flowers"
+            pic1.style.color = "blue"
+            pic1.href = "#"
+            snaplist1.appendChild(pic1)
+            pic1.addEventListener("click", () => {
+                picture.src = "https://i.pinimg.com/564x/52/b4/0c/52b40c22aeeb164af3bf1dc270ce8c75.jpg"
+            })
+
+            let snaplist2 = document.createElement("li")
+            let pic2 = document.createElement("a")
+            pic2.innerHTML = "Doggy-with-Smiles-<3"
+            pic2.style.color = "blue"
+            pic2.href = "#"
+            snaplist2.appendChild(pic2)
+            pic2.addEventListener("click", () => {
+                picture.src = "https://i.pinimg.com/564x/6e/f6/23/6ef62322dc673b1b965d3b82bc7f6209.jpg";
+
+            })
+
+            let snaplist3 = document.createElement("li")
+            let pic3 = document.createElement("a")
+            pic3.innerHTML = "Samoyed-arumjor-eiei"
+            pic3.style.color = "blue"
+            pic3.href = "#"
+            snaplist3.appendChild(pic3)
+            pic3.addEventListener("click", () => {
+                picture.src = "https://i.pinimg.com/564x/1b/17/af/1b17afe7fcdc045b182940926332c40c.jpg"
+            })
+
+            let snaplist4 = document.createElement("li")
+            let pic4 = document.createElement("a")
+            pic4.innerHTML = "Baby-Sleep-Cute-Samoyed"
+            pic4.style.color = "blue"
+            pic4.href = "#"
+            snaplist4.appendChild(pic4)
+            pic4.addEventListener("click", () => {
+                picture.src = "https://i.pinimg.com/564x/4c/bf/13/4cbf13cdb41fce0f0f547380d773b559.jpg"
+            })
+
+            let p = document.createElement("p")
+            let picture = document.createElement("img")
+            picture.height = 400
+            picture.src = "https://i.pinimg.com/564x/d6/02/ae/d602ae037fdc0d93c5d3199d344763f6.jpg"
+
+            p.appendChild(picture)
+            snaplist.appendChild(snaplist1)
+            snaplist.appendChild(snaplist2)
+            snaplist.appendChild(snaplist3)
+            snaplist.appendChild(snaplist4)
+            main.appendChild(snapshot)
+            main.appendChild(snaplist)
+            main.appendChild(p)
+
+        </script>
+    </body>
+</html>
