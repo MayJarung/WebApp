@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Page 3</title>
+    <!-- Inline = span , Block = div  -->
+    <style>
+        div{
+            border:2px solid black;
+        }
+        span{
+            border:2px solid red;
+        }
+    </style>
+</head>
+<body>
+    <h1>รายการสินค้า</h1>
+    <!-- border="1" คือความหนาของขอบตารางสีดำๆอ่ะ cellpadding = ขนาดของ cell ในตารางเพิ่มจากภายในช่อง 
+    cellspacing = ขนาดช่องว่างอยู่ภายนอกช่องข้อมูลแต่อยู่ในตารางอีกที -->
+    <table border="1" cellpadding="10" cellspacing="5"> 
+        <thead bgcolor="grey" align="center"> <!-- thead = ข้อมูลส่วนหัวตาราง -->
+            <th>รหัสสินค้า</th> <!-- th = ข้อมูลย่อยของหัวตาราง อยากให้มีกี่หัวข้อก็ใส่ไป -->
+            <th>ภาพสินค้า</th>
+            <th>ชื่อสินค้า</th>
+            <th>ราคา</th>
+            <th>สั่งซื้อ</th>
+        </thead>
+        <tbody align="center"> <!-- tbody = ข้อมูลส่วนเนื้อหาข้างในตาราง , align = ตำแหน่งของข้อมูลในตาราง -->
+            <tr bgcolor="NavajoWhite"> <!-- tr = row , bgcolor = สีพื้นหลังของตารางนั้นๆ -->
+                <td>P001</td> <!-- td = ข้อมูล column ที่ row นั้น -->
+                <td>
+                    <img src="https://i.pinimg.com/236x/b4/03/bb/b403bb82b961e927a8fc76f969ca9053.jpg" 
+                    alt="โซจูรสองุ่น" width="150px" height="160px">
+                </td>
+                <td>โซจูรสองุ่น</td>
+                <td>120.00</td>
+                <td>
+                    <a href="#">สั่งซื้อ</a>
+                </td>
+            </tr>
+            <tr bgcolor="NavajoWhite">
+                <td>P002</td>
+                <td>
+                    <img src="https://i.pinimg.com/236x/28/04/70/280470bece931e5dc334c8d495bb0ab2.jpg" 
+                    alt="โซจูรสพีช"width="150px" height="180px">
+                </td>
+                <td>โซจูรสพีช</td>
+                <td>120.00</td>
+                <td>
+                    <a href="#">สั่งซื้อ</a>
+                </td>
+            </tr>
+        </tbody>
+        <tfoot bgcolor="Tan" align="center"> <!-- tfoot = ข้อมูลส่วนท้ายตาราง ล่างตาราง -->
+            <tr>
+                <td>ราคารวม</td>
+                <td colspan="4">240.00</td> <!-- colspan = merge cell แบบ column , 
+                                                 rowspan = merge cell แบบ row -->
+                
+            </tr>
+        </tfoot>
+    </table>
+    <!-- span = กำหนดสีของชุดข้อมูลที่อยู่ใน span นี้ให้เหมือนกัน โดยข้อมูลจะไม่ขึ้นบรรทัดใหม่ จะเรียงกัน -->
+    <span style="color:blueviolet"> 
+        <b>May Narakmak</b>
+    </span>
+    <span style="color:darkslategrey">
+        <b>Dee Narakmak</b>
+    </span>
+    <!-- div = กำหนดสีของชุดข้อมูลที่อยู่ใน div นี้ให้เหมือนกัน โดยข้อมูลจะขึ้นบรรทัดใหม่ จะไม่เรียงต่อกัน -->
+    <div style="color:blueviolet"> 
+        <b>May Narakmak</b>
+    </div>
+    <div style="color:darkslategrey">
+        <b>Dee Narakmak</b>
+    </div >
+</body>
+</html>
